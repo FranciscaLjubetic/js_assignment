@@ -62,6 +62,7 @@ const singleRound = (playerSelection, computerSelection) => {
 const game = () => {
     let computerCounter = 0;
     let userCounter = 0;
+    alert("🔫🤖Hi, i dont know why you opened this rock-paper-scissors game. We have 5 rounds to set myself up as the absolute victor 🔫");
 
     for(let i=0; i < 5; i++){
         if(computerCounter < 3 && userCounter < 3) {
@@ -72,17 +73,32 @@ const game = () => {
             console.log('roundresult', roundResult);
             userCounter += roundResult.userCounter;
             computerCounter+= roundResult.computerCounter;
-            window.alert(`You played ${user}, 
-            I played ${computer} 
+            window.alert(`Round ${i+1}: You played ${user}, I played ${computer}.
             ${roundResult.result} 
-            your points: ${userCounter} 
-            my points: ${computerCounter}`)
-        } else if (computerCounter == 3) {
-            window.alert(`The winner is me, so you can bite the dust, 
+            Your points: ${userCounter} / My points: ${computerCounter}`)
+        } 
+        if (computerCounter == 3) {
+            window.alert(`With 3 of five rounds won, the winner is me, so you can bite the dust, 
             hahahahahahah`)
             break;
-        } else if (userCounter == 3) {
-            window.alert(`The winner are you, wait, no, it was just an error `);
+        }
+        if (userCounter == 3) {
+            window.alert(`With 3 of five rounds won, the winner are you, wait, no, 
+            it was just an error, because I always win`);
+            break;
+        } 
+        if (i == 4 && userCounter == computerCounter) {
+            window.alert(`At this fifth round with no results, I could say it's a tie, 
+            but I prefer to declare myself the winner`);
+            break;
+        } 
+        if (i == 4 && userCounter < computerCounter) {
+            window.alert(`The winner is me, so you can lunch, dinner, take tea or whatever you want with the dust, 
+            hahahahahahah`);
+            break;
+        } 
+        if (i == 4 && computerCounter < userCounter) {
+            window.alert(`At this fifth round, the winner are finally you, wait, no, I say it's me. Bye`);
             break;
         }
     }

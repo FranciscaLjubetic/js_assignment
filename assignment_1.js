@@ -6,6 +6,8 @@ const myTriangleSides = { first: 5, second: 6, third:7} ;
 //find the area of a triangle
 
 // const triangleArea = (a, b, c) =>{
+    
+
 
 // }
 
@@ -29,8 +31,8 @@ console.log(thisCircleProducts());
 
 
 
-const circumference = thisCircleProducts().circumference;
-const area = thisCircleProducts().area;
+const requiredCircleCicrumference = thisCircleProducts().circumference;
+const requiredCircleArea = thisCircleProducts().area;
 
 console.log('only circumference', circumference);
 
