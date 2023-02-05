@@ -59,12 +59,12 @@ const playRound = (playerSelection, computerSelection) => {
 };
 
 const finalMessage = (userCounter, computerCounter) => {
-    const loseMessage = `The winner is me, so you can lunch, dinner, take tea or whatever you want with the dust, hohoho`;
+    const looseMessage = `The winner is me, so you can lunch, dinner, take tea or whatever you want with the dust, hohoho`;
     const winMessage = `The winner are finally you. Wait, it's not a matter of points, it's a matter of charm, so I say it's me. Bye`;
     const tieMessage = `I could say it's a tie, but I prefer to declare myself the winner, LoL`;
 
     const message = (computerCounter < userCounter)? winMessage:
-        (userCounter < computerCounter)? loseMessage: 
+        (userCounter < computerCounter)? looseMessage: 
         tieMessage;
 
     window.alert(`
@@ -92,7 +92,7 @@ const doGame = (userCounter, computerCounter) => {
         Computer game: ${computer} 
         ${roundResult.result} 
         Player points: ${userCounter} | Computer points: ${computerCounter}`)
-        if(userCounter == 3 || computerCounter == 3){
+        if((userCounter == 3 || computerCounter == 3) && i < 4){
             stop = winnerInAdvance();
             if(stop) {
                 finalMessage(userCounter, computerCounter);
