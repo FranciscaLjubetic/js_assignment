@@ -60,7 +60,7 @@ const playRound = (playerSelection, computerSelection) => {
 
 const finalMessage = (userCounter, computerCounter) => {
     const looseMessage = `The winner is me, so you can lunch, dinner, take tea or whatever you want with the dust, hohoho`;
-    const winMessage = `The winner are finally you. Wait, it's not a matter of points, it's a matter of charm, so I say it's me. Bye`;
+    const winMessage = `It's not a matter of points, it's a matter of charm, so I say the winner is me. Bye`;
     const tieMessage = `I could say it's a tie, but I prefer to declare myself the winner, LoL`;
 
     const message = (computerCounter < userCounter)? winMessage:
@@ -75,7 +75,7 @@ const finalMessage = (userCounter, computerCounter) => {
 
 const winnerInAdvance = () => {
     const message = confirm(`It's not the fifth round yet, but with 3 points, we can stop now because we have a winner.
-    Would you like to stop now?`);
+    Would you like to stop this now?`);
     return message? true: false;
 };
 
@@ -94,20 +94,20 @@ const doGame = (userCounter, computerCounter) => {
         Player points: ${userCounter} | Computer points: ${computerCounter}`)
         if((userCounter == 3 || computerCounter == 3) && i < 4){
             stop = winnerInAdvance();
-            if(stop) {
-                finalMessage(userCounter, computerCounter);
-                i = 5;
-            };
         }
+        if(stop) {
+            finalMessage(userCounter, computerCounter);
+            break;
+        };
     }
     if(!stop){finalMessage(userCounter, computerCounter);};
 };
 
 const game = () => {
-    alert("🔫🤖Welcome to my rock-paper-scissors game. We have 5 rounds to set myself up as the absolute victor 🤖🔫")
+    // alert("🔫🤖Welcome to my rock-paper-scissors game. We have 5 rounds to set myself up as the absolute victor 🤖🔫")
     let computerCounter = 0;
     let userCounter = 0;
     doGame(userCounter, computerCounter);
 };
 
-game();
+// game();

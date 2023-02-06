@@ -1,0 +1,54 @@
+body {
+    color:chartreuse;
+    background-image: url('./5777371.jpeg');
+    font-family: 'Teko', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    text-align: center;
+    flex-grow: 80;
+}
+
+button {
+    background-color: rgb(18, 0, 45);
+    color:chartreuse;
+    height: 50px;
+    width: 150px;
+    border-style: solid;
+    border-radius: 25px;
+    border-width: 1px;
+    border-color: chartreuse;
+    font-size: large;
+}
+
+
+header, footer {
+    flex-grow: 10;
+    padding: 1%;
+}
+
+.to_play_hidden {
+    display: none;
+}
+
+.to_play_show {
+    display: block;
+}
+
+.to_play_show button{
+    margin: 2%;
+    display: inline-block;
+}
+
+.to_play_show h1{
+    width: 90vw;
+}
+
