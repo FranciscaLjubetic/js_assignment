@@ -1,3 +1,8 @@
+@font-face {
+    font-family: digital;
+    src: url('digital-7.regular.ttf');
+}
+
 body {
     color:chartreuse;
     background-image: url('./5777371.jpeg');
@@ -21,23 +26,39 @@ h1 {
     font-size: 2.8rem;
 }
 
+h3 {
+    margin: 0;
+}
+
+.scores span {
+    font-family: digital;
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 .scores_playing {
     visibility: hidden;
 }
 
-
 section {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
 }
 
 section > div {
     background-color: rgb(2, 0, 4);
     color:chartreuse;
-    margin: 6% 3%;
-    height: 180px;
+    margin: 6% 1%;
+    height: 200px;
     width: 130px;
     border-style: solid;
     border-radius: 5px;
@@ -82,5 +103,13 @@ header, footer {
 
 .to_play_show h1{
     width: 90vw;
+}
+
+.tie {
+    color: rgba(128, 255, 0, 0.365) !important;
+}
+
+.lost {
+    color: rgb(255, 55, 0) !important;
 }
 

@@ -1,26 +1,7 @@
-// const header = document.createElement(<header>Paper-scissors-rock Game</header> );
-// const main = document.createElement(<div class="main"></div>);
-// const footer = document.createElement(<footer>2023</footer>);
-
-// const header = document.getElementById('header_take');
-// const main = document.querySelector(".container");
-// const footer = document.querySelector("footer");
-
-
-// header.innerHTML(`<h1>🔫🤖Welcome to this Paper-Scissors-Rock game!!</h1>`);
-// main.appendChild(main);
-// footer.appendChild(footer);
-
-// window.addEventListener('DOMContentLoaded', (event) => {
-//     document.querySelector('#header_take').innerHTML('<h1>🔫🤖Welcome to this Paper-Scissors-Rock game!!</h1>');
-// });
-
-// document.addEventListener('DOMContentLoaded', myFunction);
-
-// document.addEventListener("click", makeAppearGameOptions);
 
 
 
+let numberOfRounds = 0; let userCounter = 0; let computerCounter= 0;
 
 
 document.getElementById('start_button').addEventListener("click", () =>{
@@ -32,9 +13,42 @@ document.getElementById('start_button').addEventListener("click", () =>{
 document.querySelectorAll('.play_button').forEach(button => {
     button.addEventListener('click', () => {
         const userPlay = button.value;
+        numberOfRounds +=1;
+        let stop = false;
+        if(numberOfRounds < 6){
+            const computer = computerPlay();
+            let roundResult = playRound(button.value, computer);
+            let winner = roundResult.winner;
+            userCounter += roundResult.userCounter;
+            computerCounter+= roundResult.computerCounter;
+            const userScore = document.querySelector('#user_score');
+            userScore.innerHTML += `<li class="${ winner == 'computer'? 'lost': 
+                                    winner == 'tie'? 'tie': 
+                                    'win'}">
+                                    ${userScore.children.length + 1} :  ${userPlay}</li>`;
+            const computerScore = document.querySelector('#computer_score');
+            computerScore.innerHTML += `<li class="${ winner == 'user'? 'lost':
+                                     winner == 'tie'? 'tie':
+                                    'win'}">
+                                    ${computerScore.children.length + 1} :  ${computer}</li>`;
+            
+            alert(`
+            Player game: ${button.value}, 
+            Computer game: ${computer} 
+            ${roundResult.result} 
+            Player points: ${userCounter} | Computer points: ${computerCounter}`)
+
+            if((userCounter == 3 || computerCounter == 3) && numberOfRounds < 5){
+                stop = winnerInAdvance();
+                if(stop) {
+                    // finalMessage(userCounter, computerCounter);
+                    numberOfRounds = 5;
+                };
+            }
+            if(numberOfRounds == 5) {finalMessage(userCounter, computerCounter);};    
+        }
+        
         console.log(userPlay);
-        const myUl = document.querySelector('#user_score');
-        myUl.innerHTML += `<li>R ${myUl.children.length + 1}: ${userPlay}</li>`;
     });
 });
 

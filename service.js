@@ -28,33 +28,40 @@ const playRound = (playerSelection, computerSelection) => {
     let result = 'Skynet wins, looser !!!';
     let userCounter = 0;
     let computerCounter = 0;
+    let winner = 'computer';
 
     return (playerSelection == 'Rock' && computerSelection=='Scissors')?{
         result: 'Rock breaks Scissors, you win this round !',
         userCounter: 1,
-        computerCounter
+        computerCounter,
+        winner: 'user'
     }:( playerSelection == 'Rock' && computerSelection=='Scissors')?{
         result : 'Rock breaks Scissors, you win this round !',
         userCounter: 1,
-        computerCounter
+        computerCounter,
+        winner: 'user'
     }:( playerSelection == 'Scissors' && computerSelection=='Paper')?{
         result : 'Scissors cut Paper, you win this round !',
         userCounter: 1,
-        computerCounter
+        computerCounter,
+        winner: 'user'
     }:(playerSelection == 'Paper' && computerSelection=='Rock')?{
         result: 'Paper wraps the Rock, you win this round !',
         userCounter: 1,
-        computerCounter
+        computerCounter,
+        winner: 'user'
     }:((playerSelection == 'Paper' && computerSelection=='Paper') ||
        (playerSelection == 'Rock' && computerSelection=='Rock') || 
        (playerSelection == 'Scissors' && computerSelection=='Scissors')) ? {
         result: 'It is a tie !',
         userCounter: 0,
-        computerCounter
+        computerCounter,
+        winner: 'tie'
     }:{
         result,
         userCounter,
-        computerCounter: 1
+        computerCounter: 1,
+        winner
     }
 };
 
@@ -104,7 +111,7 @@ const doGame = (userCounter, computerCounter) => {
 };
 
 const game = () => {
-    // alert("🔫🤖Welcome to my rock-paper-scissors game. We have 5 rounds to set myself up as the absolute victor 🤖🔫")
+    alert("🔫🤖Welcome to my rock-paper-scissors game. We have 5 rounds to set myself up as the absolute victor 🤖🔫")
     let computerCounter = 0;
     let userCounter = 0;
     doGame(userCounter, computerCounter);
