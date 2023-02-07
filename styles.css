@@ -17,7 +17,30 @@ main {
     flex-grow: 80;
 }
 
-button {
+.seccion_at_start {
+    visibility: hidden;
+}
+
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+section > div {
+    background-color: rgb(2, 0, 4);
+    color:chartreuse;
+    height: 180px;
+    width: 130px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgba(128, 255, 0, 0.471);
+}
+
+button  {
     background-color: rgb(18, 0, 45);
     color:chartreuse;
     height: 50px;
@@ -29,13 +52,17 @@ button {
     font-size: large;
 }
 
+button:active {
+    background-color: rgb(0, 0, 0);
+    transform: scale(0.98);
+}
 
 header, footer {
     flex-grow: 10;
     padding: 1%;
 }
 
-.to_play_hidden {
+.to_play_hidden, .hide {
     display: none;
 }
 

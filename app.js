@@ -17,16 +17,17 @@
 
 // document.addEventListener('DOMContentLoaded', myFunction);
 
-document.addEventListener("click", makeAppearGameOptions);
+// document.addEventListener("click", makeAppearGameOptions);
 
-// function myFunction() {
-//   document.querySelector('.to_play').to;
-// //   game();
-// }
+document.getElementById('start_button').addEventListener("click", () =>{
+    document.querySelector('.to_play_hidden').className= 'to_play_show';
+    document.querySelector('.to_play_show').className='hide';
+ });
 
-function makeAppearGameOptions() {
-    var hiddens = document.querySelector('.to_play_hidden');
-    hiddens.classList.toggle('to_play_show');
-    var shows = document.querySelector('.to_play_show');
-    shows.classList.toggle('to_play_hidden');
- }
+
+document.querySelectorAll('.play_button').forEach(button => {
+    button.addEventListener('click', () => {
+        const userPlay = button.value;
+        console.log(userPlay);
+    });
+});

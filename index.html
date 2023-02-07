@@ -14,16 +14,26 @@
         <p>Rock-Paper-Scissors</p>
     </header>
     <main>
-        <div class="to_play_show">
-            <h1>🔫🤖Welcome to this Rock-Paper-Scissors game. We have 5 rounds to set myself up as the absolute victor 🤖🔫</h1>
-            <button type="button" onClick="makeAppearGameOptions()">Click to Start</button>
-        </div>
-        <div class="to_play_hidden">
-            <h1>💀 Uhhh, Choose Your Game 💀</h1>
-            <button type="button">ROCK 🪨</button>
-            <button type="button">PAPER 🧻</button>
-            <button type="button">SCISSORS ✂️</button>
-        </div>
+        <section class="to_play_show">
+            <h1>🔫🤖Welcome to this Rock-Paper-Scissors game. We have 5 rounds to set myself up as the absolute victor 🔫🤖</h1>
+            <button id='start_button' type="button">Click to Start</button>
+        </section>
+        <section>
+            <div id="user_score">
+                <h5>User</h5>
+                <ul></ul>
+            </div>
+            <div id="computer_score">
+                <h5>Machine</h5>
+                <ul></ul>
+            </div>
+        </section>
+        <section class="to_play_hidden">
+            <h1> Uhhh, Choose Your Game POS ✌👊🖐</h1>
+            <button class="play_button" value="Rock" type="button">ROCK 🪨</button>
+            <button class="play_button" value="Paper" type="button">PAPER 🧻</button>
+            <button class="play_button" value="Scissors" type="button">SCISSORS ✂️</button>
+        </section>
     </main>
     <footer>
         <span>JS Assignment 2023 ©️</span>
