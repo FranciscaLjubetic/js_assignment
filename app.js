@@ -19,6 +19,10 @@
 
 // document.addEventListener("click", makeAppearGameOptions);
 
+
+
+
+
 document.getElementById('start_button').addEventListener("click", () =>{
     document.querySelector('.to_play_hidden').className= 'to_play_show';
     document.querySelector('.to_play_show').className='hide';
@@ -29,5 +33,9 @@ document.querySelectorAll('.play_button').forEach(button => {
     button.addEventListener('click', () => {
         const userPlay = button.value;
         console.log(userPlay);
+        const myUl = document.querySelector('#user_score');
+        myUl.innerHTML += `<li>R ${myUl.children.length + 1}: ${userPlay}</li>`;
     });
 });
+
+//
